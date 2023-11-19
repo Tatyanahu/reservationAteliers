@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reservation Formulairee</title>
+</head>
+<body>
+<form action="/makeReservation" method="post">
+    <label for="creneauIds">Select le creneau:</label>
+    <select name="creneauIds" multiple>
+         <!-- Iterate over the list of creneaux and generate options -->
+        <c:forEach var="creneau" items="${creneaux}">
+            <option value="${creneau.id}">${creneau.startTime} - ${creneau.endTime}</option>
+        </c:forEach>
+    </select>
+    <button type="submit">Make Reservation</button>
+</form>
+</body>
+</html>

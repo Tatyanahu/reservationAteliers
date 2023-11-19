@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Creneaux</title>
+</head>
+<body>
+    <h1>Liste des Creneaux</h1>
+    <form action="/makeReservation" method="post">
+        <table>
+            <tr>
+                <th>ID Creneau</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Selection</th>
+            </tr>
+            <tr th:each="creneau : ${creneaux}">
+                <td th:text="${creneau.id}">ID Creneau</td>
+                <td th:text="${creneau.startTime}">Start Time</td>
+                <td th:text="${creneau.endTime}">End Time</td>
+                <td>
+                    <input type="checkbox" th:name="selectedCreneaux" th:value="${creneau.id}">
+                    
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Reserve Selected Creneaux</button>
+    </form>
+</body>
+</html>

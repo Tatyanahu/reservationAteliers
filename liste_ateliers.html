@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Liste des Arteliers</title>
+</head>
+<body>
+	<h1>Liste des Ateliers</h1>
+	<table>
+        <tr>
+            <th>ID Atelier</th>
+            <th>ID Artisan</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <!-- Autres en-têtes de colonne selon vos besoins -->
+        </tr>
+        <tr th:each="atelier : ${ateliers}">
+            <td th:text="${atelier.id}">ID Atelier</td>
+            <td th:text="${atelier.artisan.id}">ID Artisan</td>
+            <td th:text="${atelier.nom}">Nom</td>
+            <td th:text="${atelier.description}">Description</td>
+            
+        </tr>
+    </table>
+	</body>
+	/</html>

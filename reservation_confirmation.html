@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Reservation Confirmation</title>
+</head>
+<body>
+ <h1>Reservation Confirmation</h1>
+ 
+  <p>Merci pour votre reservation. Details:</p>
+  
+  <p>Creneaux: 1 a ete reserve !</p>
+    
+    <ul>
+        <li th:each="creneauId : ${selectedCreneaux}">
+            Creneau ID: <span th:text="${creneauId}"></span>
+        </li>
+    </ul>
+
+</body>
+</html>

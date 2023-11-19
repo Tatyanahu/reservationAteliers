@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des clients</title>
+</head>
+<body>
+    <h1>Liste des Clients</h1>
+    <form action="/dashboard" method="post">
+        <table>
+            <tr>
+                <th>ID client</th>
+                <th>Nom</th>
+                <th>Email</th>
+                
+            </tr>
+            <tr th:each="client : ${clients}">
+                <td th:text="${client.id}">ID client</td>
+                <td th:text="${client.nom}">Nom</td>
+                <td th:text="${client.email}">Email</td>
+              
+            </tr>
+        </table>
+        <button type="submit">Retour a dashboard</button>
+    </form>
+</body>
+</html>
